@@ -217,6 +217,14 @@ const popupWindow = (tab, targetUrl, winTop, winLeft) => {
     width: width,
     height: height,
   };
+  
+  if (width == 0 || height == 0) {
+    setting = {
+      type: 'popup',
+      state: 'fullscreen',
+    };
+  }
+  
   if(targetUrl) {
     setting.url = targetUrl;
   }
